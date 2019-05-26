@@ -1,0 +1,12 @@
+- hosts: nodes
+  vars:
+    sample_vars: ansible_test
+  tasks:
+    - shell: uptime
+      register: result
+
+    - debug:
+        msg: "{{ result.stdout }}"
+
+    - debug:
+        msg: "{{ sample_vars }}"
